@@ -26,17 +26,17 @@ npm run start
 ```
 若成功開啟伺服器你會看到：
 ```
-Express server is running on http://localhost:3002
+Express server is running on http://localhost:3000
 ```
-可以至 http://localhost:3002 查看網站
+可以至 http://localhost:3000 查看網站
 
 ### Develop mode/專案開發模式
-開啟此模式時，當你修改程式並存檔完畢，無須重啟伺服器，可以重新整理 http://localhost:3002 即可查看編輯效果。
+開啟此模式時，當你修改程式並存檔完畢，無須重啟伺服器，可以重新整理 http://localhost:3000 即可查看編輯效果。
 ```
 npm run dev
 ```
 若成功你會看到：
 ```
-Express server is running on http://localhost:3002
+Express server is running on http://localhost:3000
 ```
-可以至 http://localhost:3002 查看專案目前功能
+可以至 http://localhost:3000 查看專案目前功能
