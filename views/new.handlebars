@@ -1,0 +1,95 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-lg-10 col-xl-8 mx-auto">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">新增美食餐廳</h5>
+          <hr>
+          <form action="/restaurants" method="POST">
+            <div class="form-group">
+              <label for="name">餐廳名字</label>
+              <input type="text" class="form-control" name="name" id="name" placeholder="餐廳名字" required>
+            </div>
+            <div class="form-group">
+              <label for="name_en">餐廳名字 (英文)</label>
+              <input type="text" class="form-control" name="name_en" id="name_en" placeholder="餐廳名字 (英文)">
+              <small class="form-text text-muted">說明：餐廳的英文名，方便使用者搜尋。</small>
+            </div>
+            <div class="form-group">
+              <label>類別</label>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="中東料理" id="category1" name="MiddleEast">
+                <label class="form-check-label" for="category1">
+                  中東料理
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="日本料理" id="category2" name="Japanese">
+                <label class="form-check-label" for="category2">
+                  日本料理
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="義式餐廳" id="category3" name="Italian">
+                <label class="form-check-label" for="category3">
+                  義式餐廳
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="美式餐廳" id="category4" name="American">
+                <label class="form-check-label" for="category4">
+                  美式餐廳
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="酒吧" id="category5" name="Bar">
+                <label class="form-check-label" for="category5">
+                  酒吧
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="咖啡廳" id="category6" name="Cafe">
+                <label class="form-check-label" for="category6">
+                  咖啡廳
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="其他" id="category7" name="Other">
+                <label class="form-check-label" for="category7">
+                  其他
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="image">圖片</label>
+              <input type="text" class="form-control" name="image" id="image" placeholder="圖檔連結">
+            </div>
+            <div class="form-group">
+              <label for="location">地址</label>
+              <input type="text" class="form-control" name="location" id="location" placeholder="地址" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">連絡電話</label>
+              <input type="text" class="form-control" name="phone" id="phone" placeholder="02 1234 5678">
+            </div>
+            <div class="form-group">
+              <label for="google_map">Google Map 連結</label>
+              <input type="text" class="form-control" name="google_map" id="google_map"
+                placeholder="https://www.google.com.tw/maps/">
+            </div>
+            <div class="form-group">
+              <label for="rating">評分</label>
+              <input type="number" class="form-control" name="rating" id="rating" placeholder="0-5星評價" step="0.1"
+                min="0" max="5" required>
+            </div>
+            <div class="form-group">
+              <label for="description">簡介</label>
+              <input type="text" class="form-control" name="description" id="description" placeholder="寫下餐廳簡介">
+            </div>
+            <button type="submit" class="btn btn-primary">送出</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
