@@ -50,6 +50,19 @@ header {
   color: white;
 }
 
+.btn-major-red {
+  background-color: #8C0303;
+  color: white;
+}
+
+.text-major-dark {
+  color: #91471d;
+}
+
+.text-major-red {
+  color: #8C0303;
+}
+
 .badge-rate {
   background-color: #c97d68;
   color: white;
@@ -104,4 +117,12 @@ header {
   .card img {
     height: auto;
   }
+}
+
+.fa-exclamation-triangle {
+  font-size: x-large;
+}
+
+.modal-footer {
+  border: none
 }

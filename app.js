@@ -1,13 +1,15 @@
 const express = require('express')
-const app = express()
 const exphbs = require('express-handlebars')
+const Restaurant = require('./models/restaurant.js')
+const port = 3000
+const app = express()
+
 const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: true }))
-const port = 3000
+
 const mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/restaurant-list', { useNewUrlParser: true, useUnifiedTopology: true })
 const db = mongoose.connection
-const Restaurant = require('./models/restaurant.js')
 
 // check mongodb
 db.on('error', () => {
@@ -73,10 +75,37 @@ app.get('/search', (req, res) => {
     .catch(error => console.log(error))
 })
 
+app.post('/restaurants/:id/delete', (req, res) => {
+  const id = req.params.id
+  return Restaurant.findById(id)
+    .then(restaurant => restaurant.remove())
+    .then(() => res.redirect('/'))
+    .catch(error => console.log(error))
+})
+
 app.post('/restaurants/new', (req, res) => {
   console.log(req.body)
 })
 
+app.get('/restaurants/:id/edit', (req, res) => {
+  const id = req.params.id
+  return Restaurant.findById(id)
+    .lean()
+    .then((restaurant) => res.render('edit', { restaurant }))
+    .catch(error => console.log(error))
+})
+
+app.post('/restaurants/:id/edit', (req, res) => {
+  const id = req.params.id
+  const name = req.body.name
+  return Restaurant.findById(id)
+    .then(restaurant => {
+      restaurant.name = name
+      return restaurant.save()
+    })
+    .then(() => res.redirect(`/restaurants/${id}`))
+    .catch(error => console.log(error))
+})
 //start and listen on port
 app.listen(port, () => {
   console.log(`Express server is running on http://localhost:${port}`)
