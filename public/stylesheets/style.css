@@ -50,11 +50,23 @@ header {
   color: white;
 }
 
+.btn-major:hover {
+  background-color: #91471d;
+  color: white;
+}
+
 .btn-major-red {
   background-color: #8C0303;
   color: white;
 }
 
+.btn-major-red:hover {
+  background-color: #5E0202;
+  color: white;
+}
+.text-major {
+  color: #c97d68;
+}
 .text-major-dark {
   color: #91471d;
 }

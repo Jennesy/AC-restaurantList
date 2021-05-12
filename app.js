@@ -11,6 +11,9 @@ const mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/restaurant-list', { useNewUrlParser: true, useUnifiedTopology: true })
 const db = mongoose.connection
 
+const getImage = require('./models/getDefaultImage.js')
+const googleMapURL = 'https://www.google.com.tw/maps/place/'
+
 // check mongodb
 db.on('error', () => {
   console.log('mongodb error!')
@@ -41,12 +44,12 @@ app.get('/restaurants/new', (req, res) => {
 
 app.post('/restaurants', (req, res) => {
   const name = req.body.name
-  const name_en = req.body.name
-  const category = (req.body.MiddleEast || '') + ' ' + (req.body.Japanese || '') + ' ' + (req.body.Italian || '') + ' ' + (req.body.American || '') + ' ' + (req.body.Bar || '') + ' ' + (req.body.Cafe || '') + ' ' + (req.body.Other || '')
-  const image = req.body.image || 'https://image.freepik.com/free-vector/people-eating-food-court-cafeterias_74855-5284.jpg'
+  const name_en = req.body.name_en
+  const category = req.body.category
+  const image = req.body.image || getImage(category)
   const location = req.body.location
   const phone = req.body.phone
-  const google_map = req.body.google_map || `https://www.google.com.tw/maps/place/${location}`
+  const google_map = req.body.google_map || `${googleMapURL}${location}`
   const rating = Number(req.body.rating)
   const description = req.body.description
   return Restaurant.create({ name, name_en, category, image, location, phone, google_map, rating, description })
