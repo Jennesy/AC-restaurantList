@@ -64,6 +64,17 @@ header {
   background-color: #5E0202;
   color: white;
 }
+
+.btn-major-green {
+  background-color: #579786;
+  color:white;
+}
+ .btn-major-green:hover {
+  background-color: #345A50;
+  color: white;
+}
+
+
 .text-major {
   color: #c97d68;
 }

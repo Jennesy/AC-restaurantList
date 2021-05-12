@@ -37,9 +37,12 @@
 
       <img class="rounded mx-auto d-block mb-4 w-100" src="{{restaurant.image}}" alt="{{restaurant.name}}"
         style="max-width: 600px;">
-      <div class="my-5 d-flex justify-content-end">
-        <a class="btn btn-major mr-2" href="/">
+      <div class="my-5 d-flex justify-content-start">
+        <a class="btn btn-major mr-auto" href="/">
           回上一頁
+        </a>
+        <a class="btn btn-secondary mr-2" href="/restaurants/{{restaurant._id}}/edit">
+          編輯
         </a>
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-major-red" data-bs-toggle="modal" data-bs-target="#deleteModal">
