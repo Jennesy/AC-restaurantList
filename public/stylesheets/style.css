@@ -56,12 +56,12 @@ header {
 }
 
 .btn-major-red {
-  background-color: #8C0303;
+  background-color: #AC1414;
   color: white;
 }
 
 .btn-major-red:hover {
-  background-color: #5E0202;
+  background-color: #8A1010;
   color: white;
 }
 
@@ -83,7 +83,7 @@ header {
 }
 
 .text-major-red {
-  color: #8C0303;
+  color: #AC1414;
 }
 
 .badge-rate {
@@ -148,4 +148,15 @@ header {
 
 .modal-footer {
   border: none
+}
+
+.card-columns .card {
+    margin-bottom: 0;
+}
+
+.icon-button > .fas {
+  color: #aaaaaa
+}
+.icon-button:hover > .fas {
+  color: #91471d
 }
