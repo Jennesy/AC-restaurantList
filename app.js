@@ -1,18 +1,20 @@
 const express = require('express')
 const exphbs = require('express-handlebars')
 const Restaurant = require('./models/restaurant.js')
-const port = 3000
+const methodOverride = require('method-override')
+const getImage = require('./models/getDefaultImage.js')
 const app = express()
+const port = 3000
+const googleMapURL = 'https://www.google.com.tw/maps/place/'
 
 const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(methodOverride('_method'))
 
 const mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/restaurant-list', { useNewUrlParser: true, useUnifiedTopology: true })
 const db = mongoose.connection
 
-const getImage = require('./models/getDefaultImage.js')
-const googleMapURL = 'https://www.google.com.tw/maps/place/'
 
 // check mongodb
 db.on('error', () => {
@@ -78,7 +80,7 @@ app.get('/search', (req, res) => {
     .catch(error => console.log(error))
 })
 
-app.post('/restaurants/:id/delete', (req, res) => {
+app.delete('/restaurants/:id', (req, res) => {
   const id = req.params.id
   return Restaurant.findById(id)
     .then(restaurant => restaurant.remove())
@@ -94,7 +96,7 @@ app.get('/restaurants/:id/edit', (req, res) => {
     .catch(error => console.log(error))
 })
 
-app.post('/restaurants/:id/edit', (req, res) => {
+app.put('/restaurants/:id', (req, res) => {
   const id = req.params.id
   const name = req.body.name
   const name_en = req.body.name_en
