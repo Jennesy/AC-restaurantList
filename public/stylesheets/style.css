@@ -2,6 +2,10 @@ header {
   overflow: hidden;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 .navbar .navbar-brand {
   color: #c97d68;
 }
@@ -159,4 +163,12 @@ header {
 }
 .icon-button:hover > .fas {
   color: #91471d
+}
+
+.card-href:hover {
+  background-color: #ebe6e3;
+  box-shadow: 0 0 0 rgb(0 0 0 / 0%);
+}
+.card-href:active {
+  box-shadow: inset 0 3px 10px rgb(0 0 0 / 10%);
 }
