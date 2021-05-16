@@ -172,3 +172,12 @@ a:hover {
 .card-href:active {
   box-shadow: inset 0 3px 10px rgb(0 0 0 / 10%);
 }
+
+.dropdown-item.active, .dropdown-item:active {
+    background-color: #aaaaaa;
+}
+
+.btn:focus, .btn.focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgb(201 125 104 / 25%);
+}

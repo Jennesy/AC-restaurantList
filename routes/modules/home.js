@@ -1,12 +1,15 @@
 const express = require('express')
 const router = express.Router()
 const Restaurant = require('../../models/restaurant.js')
+const getSortingMethod = require('../../models/getSortingMethod')
 
 router.get('/', (req, res) => {
+  const sort = req.query.sort || ''
   return Restaurant.find()
     .lean()
+    .sort(getSortingMethod(sort))
     .then(restaurants => {
-      res.render('index', { restaurants })
+      res.render('index', { restaurants, sort})
     })
     .catch(error => console.log(error))
 })
