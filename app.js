@@ -8,6 +8,7 @@ if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
 const session = require('express-session')
+const usePassport = require('./config/passport')
 require('./config/mongoose')
 const app = express()
 const port = 3000
@@ -21,6 +22,7 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }))
+usePassport(app)
 
 //set template engine
 app.engine('handlebars', exphbs({
