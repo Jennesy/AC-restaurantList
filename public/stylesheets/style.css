@@ -59,6 +59,16 @@ a:hover {
   color: white;
 }
 
+.btn-outline-major {
+  border: 1px solid #c97d68;
+  color: #c97d68;
+}
+
+.btn-outline-major:hover {
+  background-color: #c97d68;
+  color: white;
+}
+
 .btn-major-red {
   background-color: #AC1414;
   color: white;

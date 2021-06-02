@@ -19,6 +19,11 @@
           <img src="/restaurant_logo.png" width="30" height="30" class="d-inline-block align-top" alt="美食尋訪">
           美食尋訪
         </a>
+        {{#if isAuthenticated}}
+        <a href="/users/logout" class="btn btn-outline-major ml-auto">登出</a>
+        {{else}}
+        <a href="/users/login" class="btn btn-outline-major ml-auto">登入</a>
+        {{/if}}
       </div>
     </nav>
 
