@@ -20,7 +20,7 @@ module.exports = app => {
         return bcrypt.compare(password, user.password)
           .then(isMatch => {
             if (!isMatch) {
-              return done(null, false, req.flash('warning_msg', 'Email或Password不正確。'))
+              return done(null, false, req.flash('warning_msg', 'Email或密碼不正確。'))
             }
             return done(null, user)
           })

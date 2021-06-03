@@ -17,7 +17,7 @@
       <div class="container">
         <a class="navbar-brand" href="/">
           <img src="/restaurant_logo.png" width="30" height="30" class="d-inline-block align-top" alt="美食尋訪">
-          美食尋訪{{#if isAuthenticated}}<small class="text-muted">（{{user.name}}的收藏）</small>{{/if}}
+          美食尋訪{{#if user.name}}<small class="text-muted">（{{user.name}}的收藏）</small>{{/if}}
         </a>
         {{#if isAuthenticated}}
         <a href="/users/logout" class="btn btn-outline-major ml-auto">登出</a>
