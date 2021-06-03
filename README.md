@@ -1,6 +1,6 @@
 # 美食尋訪
 一個查找餐廳的網站，使用者可以一覽餐廳類別與評價分數以找到心儀的餐廳，也可以自由選擇查看餐廳的詳細介紹與聯絡資訊。
-![alt text](https://raw.githubusercontent.com/Jennesy/a3_restaurant_list/master/public/homepageDEMO.jpg)
+![alt text](https://raw.githubusercontent.com/Jennesy/AC-restaurantList/master/public/homepageDEMO.jpg)
 
 ## Features/功能
 * 使用者可以新增一家餐廳
@@ -25,8 +25,8 @@
 ## Installation/專案安裝
 ### Clone
 ```
-git clone https://github.com/Jennesy/a3_restaurant_list
-cd a3_restaurant_list
+git clone https://github.com/Jennesy/AC-restaurantList
+cd AC-restaurantList
 npm install
 ```
 
