@@ -33,11 +33,12 @@ app.use((req, res, next) => {
   next()
 })
 //set template engine
-app.engine('handlebars', exphbs({
+app.engine('hbs', exphbs({
   helpers: multihelpers,
-  defaultLayout: "main"
+  defaultLayout: "main",
+  extname: '.hbs'
 }))
-app.set('view engine', 'handlebars')
+app.set('view engine', 'hbs')
 
 //routes setting
 app.use(express.static('public'))
